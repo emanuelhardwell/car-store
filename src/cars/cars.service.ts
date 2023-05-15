@@ -2,9 +2,10 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { v4 as uuid } from 'uuid';
 import { CreateCarDto } from './dto';
 import { UpdateCarDto } from './dto/update-car.dto';
+import { Car } from './interfaces/car.interface';
 @Injectable()
 export class CarsService {
-  private cars = [
+  private cars: Car[] = [
     {
       id: uuid(),
       brand: 'Toyota',
